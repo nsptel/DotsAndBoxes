@@ -2,7 +2,7 @@
 
 module.exports = function (environment) {
   let ENV = {
-    modulePrefix: 'dots-and-boxes',
+    modulePrefix: 'DotsAndBoxes',
     environment,
     rootURL: '/',
     locationType: 'auto',
