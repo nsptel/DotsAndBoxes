@@ -1,0 +1,154 @@
+$player-colors: (
+  1: #c70039,
+  2: #2471ed,
+  3: #ffc300,
+  4: #51bf36,
+  5: #581845,
+);
+
+@each $playerId, $color in $player-colors {
+  .gameScores-player-#{$playerId} {
+    background-color: $color;
+  }
+
+  .clickable-player-#{$playerId}:hover {
+    cursor: pointer;
+    background-color: $color;
+  }
+
+  .filled-player-#{$playerId} {
+    cursor: not-allowed !important;
+    background-color: $color;
+  }
+
+  .filled-cell-#{$playerId} {
+    background-color: $color;
+    opacity: 0.6;
+  }
+}
+
+.game-container {
+  display: flex;
+  justify-content: center;
+}
+
+.game {
+  @extend .marginX--6, .marginY--3, .padding--6;
+
+  width: 70%;
+}
+
+.gameBoard {
+  @extend .margin-bottom--6, .padding--1;
+
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+.gameBoard-table {
+  @extend .padding--2;
+
+  background-color: $elementBackgroundColorLight;
+
+  & table,
+  & tr,
+  & td {
+    border: 1px solid $elementBackgroundColorInfo;
+    border-spacing: 0;
+    border-collapse: collapse;
+  }
+}
+
+$cellDimension: 50px;
+$wallDimension: 6px;
+
+%gameBoard-row-dimensions {
+  & td:nth-child(even) {
+    width: $cellDimension;
+  }
+
+  & td:nth-child(odd) {
+    width: $wallDimension;
+  }
+}
+
+.gameBoard .cell {
+  width: 100%;
+  height: 100%;
+}
+
+.gameBoard table {
+  & tr:nth-child(even) {
+    @extend %gameBoard-row-dimensions;
+
+    & td {
+      height: $cellDimension;
+    }
+    height: $cellDimension;
+  }
+
+  & tr:nth-child(odd) {
+    @extend %gameBoard-row-dimensions;
+
+    & td {
+      height: $wallDimension;
+    }
+    height: $wallDimension;
+  }
+}
+
+.gameBoard .corner {
+  background-color: $elementBackgroundColorInfo;
+}
+
+// GAME SCORES
+.gameScores-container {
+  @extend .padding--4, .margin--2;
+
+  background-color: $elementBackgroundColorLight;
+  height: 100%;
+  font-family: 'VT323';
+}
+
+.gameScores-turn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gameScores-player {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid $defaultBackgroundColor;
+  margin: 0 5px;
+}
+
+.gameScores-scoreboard {
+  @extend .padding--1, .margin--1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gameScores-score {
+  @extend .paddingX--2;
+  display: flex;
+  align-items: center;
+  font-size: $fontSizeLarge;
+}
+
+.gameScores-cellsLeft {
+  @extend .padding-top--2;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+  font-size: $fontSize;
+
+  & span {
+    font-size: $fontSizeXLarge;
+  }
+}

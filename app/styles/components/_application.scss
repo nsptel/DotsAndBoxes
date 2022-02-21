@@ -1,0 +1,31 @@
+.application-headerPane {
+  display: flex;
+  justify-content: space-between;
+  background-color: $defaultForegroundColor;
+}
+
+.application-heading {
+  color: $fontColor;
+  font-size: $fontSizeXXLarge;
+}
+
+.application-menu {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.application-help {
+  vertical-align: middle;
+}
+
+.application-instructions {
+  width: 70%;
+  margin: auto;
+  color: $fontColorLight;
+}
+
+.application-instructions ol li {
+  @extend .paddingY--2;
+
+  font-size: $fontSizeLarge;
+}

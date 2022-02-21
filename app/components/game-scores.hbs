@@ -1,0 +1,23 @@
+<div class='gameScores-container'>
+  <div class='gameScores-turn'>
+    Player
+    <span
+      class='gameScores-player gameScores-player-{{this.gameStatus.currentPlayer}}'
+    ></span>
+    has turn
+  </div>
+  <div class='gameScores-scoreboard'>
+    {{#each this.players as |player|}}
+      <div class='gameScores-score'>
+        <span
+          class={{concat 'gameScores-player gameScores-player-' player.id}}
+        ></span>
+        :
+        {{player.score}}
+      </div>
+    {{/each}}
+  </div>
+  <div class='gameScores-cellsLeft'>
+    <p><span>{{this.remainingCells}}</span> cells left</p>
+  </div>
+</div>

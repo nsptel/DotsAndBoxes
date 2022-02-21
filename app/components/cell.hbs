@@ -1,0 +1,21 @@
+<td
+  id='cell-{{this.row}}-{{this.col}}'
+  class={{concat
+    'cell'
+    (if
+      (get-corners this.row this.col)
+      ' corner'
+      (if
+        this.clickable
+        (if
+          this.clicked
+          (concat ' filled-player-' this.filledBy)
+          (concat ' clickable clickable-player-' this.gameStatus.currentPlayer)
+        )
+        (unless this.hasBeenFilled this.filledClass)
+      )
+    )
+  }}
+  {{on 'click' this.cellClicked}}
+>
+</td>

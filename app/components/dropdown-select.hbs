@@ -1,0 +1,17 @@
+<div class='dropdownSelect'>
+  {{#if this.isOpen}}
+    <div class='dropdownSelect-options'>
+      {{#each this.options as |option|}}
+        <div
+          class={{concat
+            'dropdownSelect-option'
+            (if (eq this.selectedOption.value option.value) ' selected')
+          }}
+          onclick={{action this.changeOption option.value}}
+        >
+          <span class='dropdownSelect-value'>{{option.value}}</span>
+        </div>
+      {{/each}}
+    </div>
+  {{/if}}
+</div>

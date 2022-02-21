@@ -1,0 +1,72 @@
+/*
+  scale is a number which will be multiplied by 8px to get desired value
+  from 8px to 48px
+*/
+$scales: 6;
+
+$allSides: top, right, bottom, left;
+
+// paddings
+@mixin padding($scale, $sides...) {
+  @each $side in $sides {
+    padding-#{$side}: $scale * 8px;
+  }
+}
+
+@mixin padding-list {
+  @for $scale from 1 through $scales {
+    // all sides
+    .padding--#{$scale} {
+      padding: $scale * 8px;
+    }
+
+    // individual sides
+    @each $side in $allSides {
+      .padding-#{$side}--#{$scale} {
+        @include padding($scale, $side);
+      }
+    }
+
+    // horizontal and vertical
+    .paddingX--#{$scale} {
+      @include padding($scale, right, left);
+    }
+    .paddingY--#{$scale} {
+      @include padding($scale, top, bottom);
+    }
+  }
+}
+
+// margins
+@mixin margin($scale, $sides...) {
+  @each $side in $sides {
+    margin-#{$side}: $scale * 8px;
+  }
+}
+
+@mixin margin-list {
+  @for $scale from 1 through $scales {
+    // all sides
+    .margin--#{$scale} {
+      margin: $scale * 8px;
+    }
+
+    // individual sides
+    @each $side in $allSides {
+      .margin-#{$side}--#{$scale} {
+        @include margin($scale, $side);
+      }
+    }
+
+    // horizontal and vertical
+    .marginX--#{$scale} {
+      @include margin($scale, right, left);
+    }
+    .marginY--#{$scale} {
+      @include margin($scale, top, bottom);
+    }
+  }
+}
+
+@include padding-list;
+@include margin-list;

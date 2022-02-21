@@ -1,0 +1,13 @@
+<div class='gameBoard'>
+  <div class='gameBoard-table'>
+    <table>
+      <Times @times={{this.cells}} as |row|>
+        <tr class='row'>
+          <Times @times={{this.cells}} as |col|>
+            <Cell @row={{row}} @col={{col}} />
+          </Times>
+        </tr>
+      </Times>
+    </table>
+  </div>
+</div>

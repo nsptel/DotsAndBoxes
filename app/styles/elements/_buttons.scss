@@ -1,0 +1,49 @@
+.button {
+  @extend .padding--2;
+
+  color: $fontColor;
+  font-size: $fontSize;
+  background-color: $elementBackgroundColor;
+  transition: box-shadow ease-out 0.2s;
+  cursor: pointer;
+
+  &:not(:disabled):hover {
+    box-shadow: 0 0 30px $defaultBoxShadowColor;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    color: $fontColorSecondary;
+    background-color: $elementBackgroundColorSecondary;
+  }
+}
+
+.button-danger {
+  background-color: $elementBackgroundColorDanger;
+}
+
+.button-info {
+  color: $fontColorLight;
+  background-color: $elementBackgroundColorInfo;
+}
+
+.button-small {
+  @extend .button;
+  @extend .padding--1;
+
+  font-size: $fontSizeSmall;
+}
+
+.button-large {
+  @extend .button;
+  @extend .padding--3;
+
+  font-size: $fontSizeLarge;
+}
+
+.button-XLarge {
+  @extend .button;
+  @extend .padding--4;
+
+  font-size: $fontSizeXLarge;
+}

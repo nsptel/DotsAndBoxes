@@ -1,0 +1,54 @@
+.configureGame {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.configureGame-formGroup {
+  @extend .margin--2;
+}
+
+.configureGame-playersSelect {
+  display: flex;
+  justify-content: center;
+}
+
+.configureGame-label,
+.configureGame-input {
+  @extend .padding--2;
+
+  align-self: center;
+  width: 300px;
+}
+
+.configureGame-input {
+  position: relative;
+}
+
+.configureGame-label {
+  text-align: right;
+  color: $fontColorLight;
+  font-size: $fontSizeLarge;
+}
+
+.configureGame-startGame {
+  align-self: center;
+}
+
+.configureGame-playersSelectTrigger {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  width: 50%;
+  color: $fontColor;
+  font-size: $fontSizeLarge;
+  background-color: $elementBackgroundColorLight;
+  cursor: pointer;
+}
+
+.configureGame-selectSymbol {
+  position: absolute;
+  right: 10px;
+  vertical-align: middle;
+}

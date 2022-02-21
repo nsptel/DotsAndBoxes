@@ -1,0 +1,27 @@
+.dropdownSelect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  z-index: 5;
+  cursor: pointer;
+}
+
+.dropdownSelect-option {
+  @extend .padding--1;
+  background-color: $elementBackgroundColorLight;
+  color: $fontColor;
+  font-size: $fontSize;
+  text-align: center;
+
+  &:hover {
+    color: $fontColorLight;
+    background-color: $elementBackgroundColorInfo;
+  }
+
+  &.selected {
+    cursor: not-allowed;
+    color: $fontColorLight;
+    background-color: $elementBackgroundColorInfo;
+  }
+}

@@ -1,0 +1,27 @@
+<div class='configureGame margin--6'>
+  <div class='configureGame-formGroup configureGame-playersSelect'>
+    <span class='configureGame-label configureGame-playersSelectLabel'># of
+      Players</span>
+    <div class='configureGame-input'>
+      <div
+        class='configureGame-playersSelectTrigger padding--2'
+        onclick={{action 'changePlayersDropdown' true}}
+      >
+        <span
+          class='configureGame-playersValue'
+        >{{this.selectedPlayers.value}}</span>
+        <span class='configureGame-selectSymbol'>&#x21D5;</span>
+      </div>
+      <DropdownSelect
+        @options={{this.players}}
+        @selectedOption={{this.selectedPlayers}}
+        @isOpen={{this.isPlayersDropdownOpen}}
+        @changeOption={{action 'changePlayers'}}
+      />
+    </div>
+  </div>
+
+  <div class='configureGame-formGroup configureGame-startGame'>
+    <GameStatusControl />
+  </div>
+</div>

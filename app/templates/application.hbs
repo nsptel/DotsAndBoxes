@@ -1,0 +1,19 @@
+{{page-title 'DotsAndBoxes'}}
+
+<div class='application-headerPane padding--2'>
+  <h1 class='application-heading'>DotsAndBoxes</h1>
+  <div class='application-menu'>
+    {{#if this.hasGameStarted}}
+      <GameStatusControl />
+    {{/if}}
+    <LinkTo
+      class='application-help button button-info margin-left--2 paddingX--3'
+      target='_blank'
+      @route='help'
+    >?</LinkTo>
+  </div>
+</div>
+
+<div class='container'>
+  {{outlet}}
+</div>

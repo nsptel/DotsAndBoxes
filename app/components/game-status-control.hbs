@@ -1,0 +1,13 @@
+<div class='gameStatusControl-container'>
+  <button
+    class={{concat 'button' (if this.hasGameStarted ' button-danger')}}
+    onclick={{action 'changeGameStatus'}}
+    type='button'
+  >
+    {{#if this.hasGameStarted}}
+      End Game
+    {{else}}
+      Start Game
+    {{/if}}
+  </button>
+</div>
