@@ -1684,7 +1684,7 @@ catch(err) {
 
 ;
           if (!runningTests) {
-            require("dots-and-boxes/app")["default"].create({"name":"dots-and-boxes","version":"0.0.0"});
+            require("dots-and-boxes/app")["default"].create({"name":"dots-and-boxes","version":"0.0.0+2c8b9232"});
           }
         
 //# sourceMappingURL=dots-and-boxes.map
