@@ -1,5 +1,5 @@
-import Application from 'dots-and-boxes/app';
-import config from 'dots-and-boxes/config/environment';
+import Application from 'DotsAndBoxes/app';
+import config from 'DotsAndBoxes/config/environment';
 import * as QUnit from 'qunit';
 import { setApplication } from '@ember/test-helpers';
 import { setup } from 'qunit-dom';

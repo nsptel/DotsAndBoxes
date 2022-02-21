@@ -1,5 +1,5 @@
 import EmberRouter from '@ember/routing/router';
-import config from 'dots-and-boxes/config/environment';
+import config from 'DotsAndBoxes/config/environment';
 
 export default class Router extends EmberRouter {
   location = config.locationType;
